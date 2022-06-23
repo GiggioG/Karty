@@ -175,6 +175,7 @@ function main() {
             }
         } else if (key == 'p' && objects.length > 1) {
             let closest = selected.closest(objects, () => { return true; });
+            if (selected.dist(closest.x, closest.y) > 150) { return; };
             if (selected.type == "card") {
                 if (closest.type == "card") {
                     let newd = new Deck([selected.card, closest.card]);
