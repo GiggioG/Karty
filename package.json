@@ -1,0 +1,30 @@
+{
+    "name": "karty",
+    "version": "1.0.0",
+    "description": "Playing card simulator. Play any card game you want!",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GiggioG/Karty.git"
+    },
+    "keywords": [
+        "cards",
+        "game",
+        "playing_cards",
+        "js",
+        "html5",
+        "canvas"
+    ],
+    "author": "Gigo_G",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/GiggioG/Karty/issues"
+    },
+    "homepage": "https://github.com/GiggioG/Karty#readme",
+    "dependencies": {
+        "uuid": "^8.3.2"
+    }
+}

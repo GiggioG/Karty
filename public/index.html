@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karty</title>
+    <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
+    <style>
+         :root {
+            --player-color: rgb(127, 127, 127);
+        }
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        #announcements {
+            position: absolute;
+            left: 0px;
+            bottom: 5px;
+            width: 300px;
+            list-style: none;
+            opacity: 75%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        .announcement {
+            transition: opacity 1s ease;
+            border: 1px solid var(--player-color);
+            width: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            text-justify: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+    </style>
+    <script src="util.js" defer></script>
+    <script src="cards.js" defer></script>
+    <script src="invertColor.js" defer></script>
+    <script src="visuals.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body style="background-color:blue">
+    <script>
+        window.cardsLoaded = false;
+    </script>
+    <img id="background" class="hide" src="https://media.istockphoto.com/photos/simple-green-felt-background-picture-id96655837?k=20&m=96655837&s=612x612&w=0&h=8FRuo07dalal2o_XjimCb-L4WYsnb_BuijYuhjot9rI=">
+    <br class="hide">
+    <img id="card_backR" class="card hide" src="imgs/backR.png">
+    <img id="card_backB" class="card hide" src="imgs/backB.png">
+    <img id="card_dropShadow" class="card hide" src="imgs/dropShadow.png">
+    <img id="card_VS" class="card hide" src="imgs/VS.png">
+    <img id="card_VH" class="card hide" src="imgs/VH.png">
+    <br class="hide">
+    <img id="card_2S" class="card hide" src="imgs/2S.png">
+    <img id="card_2H" class="card hide" src="imgs/2H.png">
+    <img id="card_2D" class="card hide" src="imgs/2D.png">
+    <img id="card_2C" class="card hide" src="imgs/2C.png">
+    <br class="hide">
+    <img id="card_3S" class="card hide" src="imgs/3S.png">
+    <img id="card_3H" class="card hide" src="imgs/3H.png">
+    <img id="card_3D" class="card hide" src="imgs/3D.png">
+    <img id="card_3C" class="card hide" src="imgs/3C.png">
+    <br class="hide">
+    <img id="card_4S" class="card hide" src="imgs/4S.png">
+    <img id="card_4H" class="card hide" src="imgs/4H.png">
+    <img id="card_4D" class="card hide" src="imgs/4D.png">
+    <img id="card_4C" class="card hide" src="imgs/4C.png">
+    <br class="hide">
+    <img id="card_5S" class="card hide" src="imgs/5S.png">
+    <img id="card_5H" class="card hide" src="imgs/5H.png">
+    <img id="card_5D" class="card hide" src="imgs/5D.png">
+    <img id="card_5C" class="card hide" src="imgs/5C.png">
+    <br class="hide">
+    <img id="card_6S" class="card hide" src="imgs/6S.png">
+    <img id="card_6H" class="card hide" src="imgs/6H.png">
+    <img id="card_6D" class="card hide" src="imgs/6D.png">
+    <img id="card_6C" class="card hide" src="imgs/6C.png">
+    <br class="hide">
+    <img id="card_7S" class="card hide" src="imgs/7S.png">
+    <img id="card_7H" class="card hide" src="imgs/7H.png">
+    <img id="card_7D" class="card hide" src="imgs/7D.png">
+    <img id="card_7C" class="card hide" src="imgs/7C.png">
+    <br class="hide">
+    <img id="card_8S" class="card hide" src="imgs/8S.png">
+    <img id="card_8H" class="card hide" src="imgs/8H.png">
+    <img id="card_8D" class="card hide" src="imgs/8D.png">
+    <img id="card_8C" class="card hide" src="imgs/8C.png">
+    <br class="hide">
+    <img id="card_9S" class="card hide" src="imgs/9S.png">
+    <img id="card_9H" class="card hide" src="imgs/9H.png">
+    <img id="card_9D" class="card hide" src="imgs/9D.png">
+    <img id="card_9C" class="card hide" src="imgs/9C.png">
+    <br class="hide">
+    <img id="card_10S" class="card hide" src="imgs/10S.png">
+    <img id="card_10H" class="card hide" src="imgs/10H.png">
+    <img id="card_10D" class="card hide" src="imgs/10D.png">
+    <img id="card_10C" class="card hide" src="imgs/10C.png">
+    <br class="hide">
+    <img id="card_JS" class="card hide" src="imgs/JS.png">
+    <img id="card_JH" class="card hide" src="imgs/JH.png">
+    <img id="card_JD" class="card hide" src="imgs/JD.png">
+    <img id="card_JC" class="card hide" src="imgs/JC.png">
+    <br class="hide">
+    <img id="card_QS" class="card hide" src="imgs/QS.png">
+    <img id="card_QH" class="card hide" src="imgs/QH.png">
+    <img id="card_QD" class="card hide" src="imgs/QD.png">
+    <img id="card_QC" class="card hide" src="imgs/QC.png">
+    <br class="hide">
+    <img id="card_KS" class="card hide" src="imgs/KS.png">
+    <img id="card_KH" class="card hide" src="imgs/KH.png">
+    <img id="card_KD" class="card hide" src="imgs/KD.png">
+    <img id="card_KC" class="card hide" src="imgs/KC.png">
+    <br class="hide">
+    <img id="card_AS" class="card hide" src="imgs/AS.png">
+    <img id="card_AH" class="card hide" src="imgs/AH.png">
+    <img id="card_AD" class="card hide" src="imgs/AD.png">
+    <img id="card_AC" class="card hide" src="imgs/AC.png" onload="main();">
+    <br class="hide">
+    <canvas tabindex="0"></canvas>
+    <ul id="announcements">
+    </ul>
+</body>
+
+</html>
