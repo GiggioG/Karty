@@ -139,7 +139,7 @@ function main() {
     canvas.addEventListener("mousemove", e => {
         mouse.x = e.x;
         mouse.y = e.y;
-        if (dragged) {
+        if (dragged && !dragged.delete_me) {
             dragged.drag(e.x - dragOffset.x, e.y - dragOffset.y);
             cancelClick = true;
         }
